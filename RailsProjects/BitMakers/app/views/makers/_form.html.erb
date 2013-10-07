@@ -1,0 +1,74 @@
+<%= form_for(@maker) do |f| %>
+  <% if @maker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@maker.errors.count, "error") %> prohibited this maker from being saved:</h2>
+
+      <ul>
+      <% @maker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_pic %><br />
+    <%= f.text_field :profile_pic %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio %><br />
+    <%= f.text_field :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :facebook_URL %><br />
+    <%= f.text_field :facebook_URL %>
+  </div>
+
+  <div class="field">
+    <%= f.label :twitter_URL %><br />
+    <%= f.text_field :twitter_URL %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linkedin_URL %><br />
+    <%= f.text_field :linkedin_URL %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website_URL %><br />
+    <%= f.text_field :website_URL %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email_public %><br />
+    <%= f.check_box :email_public %>
+  </div>
+
+  <div class="field">
+    <%= f.label :looking_for_work %><br />
+    <%= f.check_box :looking_for_work %>
+  </div>
+
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

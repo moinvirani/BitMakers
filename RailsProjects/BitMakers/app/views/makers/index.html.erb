@@ -1,0 +1,52 @@
+<div class="container">
+ 
+<table>
+  <tr>
+<% @makers.each do |maker| %>
+  
+    <td><%= maker.first_name %></td>
+    <td><%= maker.last_name %></td>
+    <td><%#= link_to 'Show', maker %></td>
+    <td><%= link_to 'Edit', edit_maker_path(maker) %>|</td>
+    <td><%#= link_to 'Destroy', maker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+<% end %>
+  </tr>
+</table>
+
+<br />
+
+<%= link_to 'New Maker', new_maker_path %>
+
+
+    <div class="maker_slider span12 row">
+
+      <% @makers.each do |maker| %>
+
+        <div class="profile_preview">
+
+          <div class="profile_pic">
+            <%= image_tag (maker.profile_pic) %>
+          </div>
+
+          <div class="maker_overlay">
+
+            <div class="preview_details">
+
+            <h3><%= maker.first_name %>
+            <%= maker.last_name %></h3>
+
+            <h4><%= maker.bio %></h4>
+
+            </div>
+          </div>
+
+        </div>
+
+        <% end %>
+
+
+    </div>
+
+
+</div>

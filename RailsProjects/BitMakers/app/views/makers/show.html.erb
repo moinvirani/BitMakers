@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="maker_profile">
+
+
+	<div class="profile_pic">
+		<%= image_tag( @maker.profile_pic) %>
+	</div>
+
+	<div class="profile_details">
+		<h2>
+	  		<%= @maker.first_name + " " + @maker.last_name %>
+		</h2>
+	</div>
+
+
+
+
+</div>
+
+<%#= link_to 'Edit', edit_maker_path(@maker) %>
+<%= link_to 'Back', makers_path %>

@@ -1,0 +1,45 @@
+<div class="container offset1">
+
+<table>
+
+<% @makers.each do |maker| %>
+  <tr>
+    <td><%= maker.first_name %></td>
+    <td><%= maker.last_name %></td>
+    <td><%= link_to 'Show', maker %></td>
+    <td><%= link_to 'Edit', edit_maker_path(maker) %></td>
+    <td><%= link_to 'Destroy', maker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Maker', new_maker_path %>
+
+
+
+    <div class="maker_slider span12 row">
+
+      <% @makers.each do |maker| %>
+
+        <div class="span3">
+
+          <div class="profile_pic">
+            <%= image_tag (maker.profile_pic) %>
+          </div>
+
+          <div class="maker_overlay">
+            <h3><%= maker.first_name %>
+            <%= maker.last_name %></h3>
+          </div>
+
+        </div>
+
+        <% end %>
+
+
+    </div>
+
+
+</div>
